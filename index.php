@@ -11,6 +11,7 @@
 <body>
     <div class="container">
         <?php 
+
             if(isset($_GET['page'])) {
                 $page = $_GET['page'];
 
@@ -20,6 +21,10 @@
             } else {
                 include "pages/products.php";
             }
+
+            foreach($productLines as $productLine) 
+              echo $productLine["productLine"]
+            
         ?>
     </div>
 </body>

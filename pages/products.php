@@ -7,8 +7,7 @@
     $cols =  $productsObject->cols();    
     $productsObject->deleteProduct();
     $productsObject->createProduct();
-  //  $productLines = $productLinesObject->index(); //visa darbu masyva
- //   $departments = $departmentsObject->index();
+    $productLines = $productLinesObject->index(); //visa produktu liniju masyva masyva
 
 ?>  
 

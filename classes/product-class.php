@@ -2,10 +2,7 @@
 
 include "utilities/DatabaseManager.php";
 
-
 class Product {
-
-
 
     private $cols = array(
         "productCode" => "ID",
@@ -13,7 +10,7 @@ class Product {
         "productLine" => "Product Line",
         "productScale" => "Scale",
         "productVendor" => "Vendor",
-        "productDescription	" => "Description",
+        "productDescription" => "Description",
         "quantityInStock" => "Stock",
         "buyPrice" => "Cost",
         "MSRP" => "End User Price"
@@ -23,16 +20,13 @@ class Product {
     public function index() {
         //1. select uzklausa i duomenu baze
         //2. grazina rezultata
-        //3. atvaizduojamas pages/employees.php
+        //3. atvaizduojamas pages/producys.php
 
         //prie duombazes atsidaro
         $databaseManager = new DatabaseManager();
         $products = $databaseManager->select('products');
 
-
-        // $jobs = new Job;
-        // $jobs = $jobs->index();
-        
+    
         return $products;
     }
 
