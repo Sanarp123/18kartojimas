@@ -1,40 +1,38 @@
 <form method="post" action="index.php">
     <!-- <input type="hidden" name="page" value="<?php //echo $_GET['page']; ?>"> -->
-    <!-- "employee_id" => "ID",
-        "first_name" => "First Name",
-        "last_name" => "Last Name",
-        "email" => "Email",
-        "phone_number" => "Phone Number",
-        "hire_date" => "Hire Date",
-        "job_id" => "Job ID",
-        "salary" => "Salary",
-        "manager_id" => "Manager ID",
-        "department_id" => "Department ID" -->
+
     <div class="form-group">
-        <label for="first_name">First Name</label>
-        <input type="text" name="first_name" class="form-control" id="first_name" placeholder="First Name">
+        <label for="productCode">Product code</label>
+        <input type="text" name="productCode" class="productCode" id="productCode" placeholder="productCode">
     </div>
     <div class="form-group">
-        <label for="last_name">Last Name</label>
-        <input type="text" name="last_name" class="form-control" id="last_name" placeholder="Last Name">
+        <label for="productName">Product Name</label>
+        <input type="text" name="productName" class="productName" id="productName" placeholder="productName">
     </div>
     <div class="form-group">
-        <label for="email">Email</label>
-        <input type="text" name="email" class="form-control" id="email" placeholder="Email">
+        <label for="productLine ">Product Line</label>
+        <input type="text" name="productLine " class="form-control" id="productLine " placeholder="productLine ">
     </div>
     <div class="form-group">
-        <label for="phone_number">Phone Number</label>
-        <input type="text" name="phone_number" class="form-control" id="phone_number" placeholder="Phone Number">
+        <label for="productScale">Product line</label>
+        <input type="text" name="productScale" class="form-control" id="productScale" placeholder="productScale">
     </div>
     <div class="form-group">
-        <label for="hire_date">Hire Date</label>
-        <input type="date" name="hire_date" class="form-control" id="hire_date" placeholder="Hire Date">
+        <label for="productVendor">Product Vendor</label>
+        <input type="text" name="productVendor" class="form-control" id="productVendor" placeholder="productVendor">
     </div>
+
+
+
+
+
+
+
     <div class="form-group">
-        <label for="job_id">Job ID</label>
+        <label for="productLine">Product Line</label>
         <!-- <input type="text" name="job_id" class="form-control" id="job_id" placeholder="Job ID"> -->
 
-        <select name="job_id" class="form-select">
+        <select name="productLine" class="form-select">
                 <!-- masyva kuri gavome is duomenu bazes  -->
                 <?php foreach($jobs as $job) { ?>
                         <option value="<?php echo $job["job_id"] ?>"><?php echo $job["job_title"] ?></option>

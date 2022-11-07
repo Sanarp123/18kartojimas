@@ -14,11 +14,11 @@
             if(isset($_GET['page'])) {
                 $page = $_GET['page'];
 
-                if($page == "employees") {
-                    include "pages/employees.php";
+                if($page == "products") {
+                    include "pages/products.php";
                 }
             } else {
-                include "pages/employees.php";
+                include "pages/products.php";
             }
         ?>
     </div>

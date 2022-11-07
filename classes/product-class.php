@@ -3,21 +3,20 @@
 include "utilities/DatabaseManager.php";
 
 
-class Employee {
+class Product {
 
 
 
     private $cols = array(
-        "employee_id" => "ID",
-        "first_name" => "First Name",
-        "last_name" => "Last Name",
-        "email" => "Email",
-        "phone_number" => "Phone Number",
-        "hire_date" => "Hire Date",
-        "job_id" => "Job ID",
-        "salary" => "Salary",
-        "manager_id" => "Manager ID",
-        "department_id" => "Department ID"
+        "productCode" => "ID",
+        "productName" => "Product Name",
+        "productLine" => "Product Line",
+        "productScale" => "Scale",
+        "productVendor" => "Vendor",
+        "productDescription	" => "Description",
+        "quantityInStock" => "Stock",
+        "buyPrice" => "Cost",
+        "MSRP" => "End User Price"
     );
 
     //uz duomenu gavima
@@ -28,13 +27,13 @@ class Employee {
 
         //prie duombazes atsidaro
         $databaseManager = new DatabaseManager();
-        $employees = $databaseManager->select('employees');
+        $products = $databaseManager->select('products');
 
 
         // $jobs = new Job;
         // $jobs = $jobs->index();
         
-        return $employees;
+        return $products;
     }
 
     public function cols() {
@@ -43,7 +42,7 @@ class Employee {
 
 
     //uz duomenu sukurima
-    public function createEmployee() {
+    public function createProduct() {
         //visus kintamuosius kuriuos paduoda POST metodas
         if(isset($_POST["create"])) {
             $data = $_POST;
@@ -54,26 +53,26 @@ class Employee {
             $values = array_values($data);
 
             $databaseManager = new DatabaseManager();
-            $databaseManager->insert('employees', $cols, $values);
+            $databaseManager->insert('products', $cols, $values);
 
-            header("Location: index.php?page=employees");
+            header("Location: index.php?page=products");
             exit();
         }
         
     }
 
     //uz duomenu redagavima
-    public function updateEmployee() {
+    public function updateProduct() {
 
     }
 
     //uz duomenu istrynima
-    public function deleteEmployee() {
-        if(isset($_POST["page"]) && $_POST["page"] == "employees") {
+    public function deleteProduct() {
+        if(isset($_POST["page"]) && $_POST["page"] == "products") {
             if(isset($_POST["delete"])) {
                 $databaseManager = new DatabaseManager();
-                $databaseManager->delete('employees', 'employee_id', $_POST["delete"]);//mygtuko reiksme
-                header("Location: index.php?page=employees");
+                $databaseManager->delete('products', 'productCode', $_POST["delete"]);//mygtuko reiksme
+                header("Location: index.php?page=products");
                 exit();
             }
         }
@@ -81,4 +80,4 @@ class Employee {
 
 }
 
-$employeesObject = new Employee();
+$productsObject = new Product();
