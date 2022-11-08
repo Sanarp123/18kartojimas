@@ -22,9 +22,7 @@
                 include "pages/products.php";
             }
 
-            foreach($productLines as $productLine) 
-              echo $productLine["productLine"]
-            
+                 
         ?>
     </div>
 </body>

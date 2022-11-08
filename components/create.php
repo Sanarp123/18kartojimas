@@ -1,5 +1,5 @@
 <form method="post" action="index.php">
-    <!-- <input type="hidden" name="page" value="<?php //echo $_GET['page']; ?>"> -->
+    <!-- <input type="hidden" name="page" value="<?php echo $_GET['page']; ?>"> -->
 
     <div class="form-group">
         <label for="productCode">Product code</label>
@@ -9,18 +9,24 @@
         <label for="productName">Product Name</label>
         <input type="text" name="productName" class="productName" id="productName" placeholder="productName">
     </div>
+
+
+
     <div class="form-group">
         <label for="productLine">Product Line</label>
             <select name="productLine" class="form-select">
                 <!-- masyva kuri gavome is duomenu bazes  -->
-                <?php echo $productLines;
-                
-           //     foreach($productLines as $productLine) { 
-            ?>
-           //             <option value="<?php  ?>"></option>
-                <?php  ?>    
+                <?php foreach($productLines as $productLine) 
+                { ?>                        
+                <option value="<?php echo $productLine["productLine"] ?>"><?php echo $productLine["productLine"] ?></option>
+                <?php 
+                } 
+                ?>    
         </select>
     </div>
+
+
+
     <div class="form-group">
         <label for="productScale">Product Scale</label>
         <input type="text" name="productScale" class="form-control" id="productScale" placeholder="productScale">
@@ -49,4 +55,5 @@
     </div>
     
     <button type="submit" name="create" class="btn btn-primary">Create</button>
+
 </form>
